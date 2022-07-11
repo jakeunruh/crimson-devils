@@ -1,4 +1,20 @@
-@use "./mixins.scss" as m;
+/************
+mixins
+*************/
+
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
 
 /************
 vars
@@ -40,7 +56,7 @@ body {
     margin: 0;
     color: $white;
     font-family: Arial, Helvetica, sans-serif;
-    @include m.for-phone-only {
+    @include for-size(phone-only) {
         height: auto;
     }
 }
@@ -65,7 +81,7 @@ buttons
     &:hover {
         background-color: rgba($red, .2);
     }
-    @include m.for-phone-only {
+    @include for-size(phone-only) {
         min-width: 0;
         width: 100%;
         margin: 0 auto;
@@ -93,9 +109,10 @@ header styles
         width: 15%;
         margin: 0 auto;
         display: block;
-        filter: invert(13%) sepia(69%) saturate(2476%) hue-rotate(369deg) brightness(160%) contrast(106%)
+        filter: invert(13%) sepia(69%) saturate(2476%) hue-rotate(369deg) brightness(160%) contrast(106%);
+        animation: birdMove 1000ms;
     }
-    @include m.for-phone-only {
+    @include for-size(phone-only) {
         &__img--logo {
             width: 100%;
         }
