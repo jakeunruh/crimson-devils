@@ -15,6 +15,7 @@ bird animation
     0% {
         transform: scale(.5);
     }
+
     100% {
         transform: scale(1);
     }
@@ -31,6 +32,7 @@ fix boxes
 /************
 centering
 *************/
+
 body {
     background-color: #000;
     width: 100%;
@@ -42,6 +44,7 @@ body {
         height: auto;
     }
 }
+
 h1, h2, h3, h4, h5 {
     margin-top: 0;
 }
@@ -101,11 +104,16 @@ header styles
         }
     }
 }
+
+/************
+main styles
+*************/
+
 .main {
     margin: 3rem 1rem;
     &__video-wrapper {
         margin: 0 0 3rem;
-        padding: 3rem 20%;
+        padding: 3rem 10%;
         text-align: center;
         border-top: 1px solid $red;
         border-bottom: 1px solid $red;
@@ -137,6 +145,11 @@ header styles
         padding: 0;
     }
 }
+
+/************
+footer styles
+*************/
+
 .footer {
     margin: 3rem 1rem;
     &__social-link-list {
