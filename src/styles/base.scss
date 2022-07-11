@@ -128,7 +128,8 @@ main styles
 *************/
 
 .main {
-    margin: 3rem 1rem;
+    margin: 3rem 2rem;
+    text-align: center;
     &__video-wrapper {
         margin: 0 0 3rem;
         padding: 3rem 10%;
@@ -162,6 +163,24 @@ main styles
         list-style: none;
         margin: 0 0 1rem;
         padding: 0;
+    }
+    &__upper-content {
+        padding: 3rem 2rem;
+        display: flex;
+        justify-content: center;
+        .bio {
+            text-align: left;
+            width: 65%;
+        }
+        .iframe {
+            width: 35%;
+            > div {
+                font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;
+            }
+            a {
+                color: #cccccc; text-decoration: none;
+            }
+        }
     }
 }
 
