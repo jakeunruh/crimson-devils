@@ -95,13 +95,18 @@ header styles
         font-size: 0;
     }
     &__img--logo {
-        width: 50%;
+        position: relative;
+        z-index: 0;
+        width: 35%;
         margin: 0 auto;
         display: block;
         filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
     }
     &__img--bird {
-        width: 15%;
+        position: relative;
+        z-index: 1;
+        top: -15px;
+        width: 25%;
         margin: 0 auto;
         display: block;
         filter: invert(13%) sepia(69%) saturate(2476%) hue-rotate(369deg) brightness(160%) contrast(106%);
@@ -109,10 +114,11 @@ header styles
     }
     @include for-size(phone-only) {
         &__img--logo {
-            width: 100%;
+            width: 50%;
         }
         &__img--bird {
-            width: 40%;
+            width: 35%;
+            top: -10px;
         }
     }
 }
