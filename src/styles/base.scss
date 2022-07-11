@@ -161,6 +161,7 @@ footer styles
         padding: 0;
     }
     &__social-link-list-item {
+        list-style: none;
         .social-svg {
             &:hover {
                 background: $white;
