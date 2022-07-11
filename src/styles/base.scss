@@ -1,0 +1,130 @@
+@use "./mixins.scss" as m;
+
+/************
+vars
+*************/
+
+$red: #b81a0a;
+$white: #e6e6e6; 
+
+/************
+bird animation
+*************/
+
+@keyframes birdMove {
+    0% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/************
+fix boxes
+*************/
+
+* {
+    box-sizing: border-box;
+}
+
+/************
+centering
+*************/
+body {
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    @include m.for-phone-only {
+        height: auto;
+    }
+}
+
+/************
+buttons
+*************/
+
+.btn {
+    display: inline-block;
+    min-width: 350px;
+    background: transparent;
+    color: $white;
+    border: 2px solid $red;
+    border-radius: 5px;
+    padding: 15px;
+    text-decoration: none;
+    &:hover {
+        background-color: rgba($red, .2);
+    }
+    @include m.for-phone-only {
+        min-width: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/************
+header styles
+*************/
+
+.header {
+    margin: 3rem 1rem;
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+    }
+    &__img--logo {
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+        filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
+    }
+    &__img--bird {
+        width: 20%;
+        margin: 0 auto;
+        display: block;
+        filter: invert(13%) sepia(69%) saturate(2476%) hue-rotate(369deg) brightness(160%) contrast(106%)
+    }
+    @include m.for-phone-only {
+        &__img--logo {
+            width: 100%;
+        }
+        &__img--bird {
+            width: 40%;
+        }
+    }
+}
+.main {
+    margin: 3rem 1rem;
+    &__link-list {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    &__link-list-item {
+        list-style: none;
+        margin: 0 0 1rem;
+        padding: 0;
+    }
+}
+.footer {
+    margin: 3rem 1rem;
+    &__social-link-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    &__social-link-list-item {
+        .social-svg {
+            &:hover {
+                background: $white;
+            }
+        }
+    }
+}
