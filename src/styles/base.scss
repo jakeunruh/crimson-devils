@@ -1,4 +1,26 @@
 /************
+vars
+*************/
+
+$red: #A1171B;
+$yellow: #D47404;
+$white: #e9e5e4;
+$black: #0D0604;
+$orange: #B3450B;
+$maroon: #5F150E;
+
+$max-width: 1300px;
+
+/************
+fonts
+*************/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,600&family=Montserrat:wght@300;500;700;900&display=swap');
+
+$heading-font: 'Barlow Condensed', sans-serif;
+$body-font: 'Montserrat', sans-serif;
+
+/************
 mixins
 *************/
 
@@ -23,26 +45,17 @@ mixins
     font-size: $sizeValue + px;
   }
 
-/************
-vars
-*************/
+  // centered background
+  @mixin fullWidth() {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
-$red: #ac0f1b;
-$yellow: #dd8d1d;
-$white: #f2f4f3;
-$black: #0a0908;
-$gunmetal: #22333b;
-
-$max-width: 1300px;
-
-/************
-fonts
-*************/
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,600&family=Montserrat:ital@0;1&display=swap');
-
-$heading-font: 'Barlow Condensed', sans-serif;
-$body-font: 'Montserrat', sans-serif;
 /************
 bird animation
 *************/
@@ -70,6 +83,8 @@ general
 *************/
 html {
     font-size: 62.5%; /* Sets up the Base 10 stuff */
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -145,7 +160,7 @@ buttons
     padding: 15px;
     text-decoration: none;
     &:hover {
-        background-color: rgba($red, .2);
+        background-color: rgba($red, .5);
     }
     @include for-size(phone-only) {
         min-width: 0;
@@ -164,12 +179,7 @@ header styles
     margin: 0 0 1.5rem;
     max-width: $max-width;
     &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -4rem;
-        width: calc(100vw + 4rem);
-        height: 100%;
+        @include fullWidth();
         background: url('../img/bg.jpg') no-repeat center;
         background-size: cover;
         opacity: .4;
@@ -339,6 +349,23 @@ main styles
         .tracklist {
             ol {
                 margin: 0;
+                padding: 0;
+                list-style: none;
+                counter-reset: my-awesome-counter;
+                li {
+                    padding: 1.5rem 0;
+                    border-top: 1px solid $maroon;
+                    font-weight: bold;
+                    color: $black;
+                    counter-increment: my-awesome-counter;
+                    &:nth-child(1) {
+                        border: none;
+                    }
+                    &:before {
+                        content: counter(my-awesome-counter)'. ';
+                        color: $maroon;
+                    }
+                }
             }
         }
     }

@@ -20,11 +20,11 @@ function EpkFH() {
           </section>
         </section>
         <section className="main__description-tracklist">
-          <section class="description">
+          <section className="description">
             <h2>Forever High is the upcoming release from Crimson Devils</h2>
             <p>Recorded at the BBQ Shack in Austin, Tx with Jason Morales, Forever High is the second record for Crimson Devils.</p>
           </section>
-          <section class="tracklist">
+          <section className="tracklist">
             <h2>Tracklist</h2>
             <ol>
               <li>Feels Like The Last Time</li>
