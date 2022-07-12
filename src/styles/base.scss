@@ -225,12 +225,7 @@ header styles
     align-items: center;
     padding: 1.5rem 0;
     &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -4rem;
-        width: 100vw;
-        height: 100%;
+        @include fullWidth();
         background: url('../img/bg.jpg') no-repeat center;
         background-size: cover;
         opacity: .7;
@@ -278,11 +273,7 @@ main styles
         color: $black;
         position: relative;
         &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100vw;
-            height: 100%;
+            @include fullWidth();
             background-color: $red;
             z-index: -1;
         }
@@ -304,6 +295,15 @@ main styles
             & + section {
                 width: 33%;
             }        
+        }
+        @include for-size(phone-only) {
+            display: block;
+            > section {
+                width: 100%;
+                & + section {
+                    width: 100%;
+                }
+            }
         }
     }
     &__bio-releases {
@@ -433,6 +433,13 @@ main styles
             }
             .releases {
                 width: 100%;
+            }
+        }
+        &__album-audio {
+            .album {
+                img {
+                    width: 100%;
+                }
             }
         }
     }
