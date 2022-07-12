@@ -170,9 +170,9 @@ header styles
         left: -4rem;
         width: 100vw;
         height: 100%;
-        background: url('../img/band.jpg') no-repeat center;
+        background: url('../img/bg.jpg') no-repeat center;
         background-size: cover;
-        opacity: .2;
+        opacity: .4;
     }
     &__title {
         margin: 0;
@@ -221,9 +221,9 @@ header styles
         left: -4rem;
         width: 100vw;
         height: 100%;
-        background: url('../img/band.jpg') no-repeat center -650px;
+        background: url('../img/bg.jpg') no-repeat center;
         background-size: cover;
-        opacity: .5;
+        opacity: .7;
         z-index: -1;
     }
     &__img--logo {
@@ -232,11 +232,6 @@ header styles
         width: 100px;
         display: block;
         filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
-    }
-    @include for-size(phone-only) {
-        &:before {
-            background-position: center center;
-        }
     }
 }
 
