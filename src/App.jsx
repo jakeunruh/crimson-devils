@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/base.scss";
 import Home from "./pages/Home";
-import Epk from "./pages/Epk";
+import EpkGeneral from "./pages/EpkGeneral";
+import EpkFH from "./pages/EpkFH";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/epk" element={<Epk />} />
+        <Route exact path="/epk" element={<EpkGeneral />} />
+        <Route exact path="/epk-forever-high" element={<EpkFH />} />
       </Routes>
     </Router>
     </>

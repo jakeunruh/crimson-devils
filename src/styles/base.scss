@@ -2,6 +2,7 @@
 mixins
 *************/
 
+// breakpoints
 @mixin for-size($size) {
     @if $size == phone-only {
       @media (max-width: 599px) { @content; }
@@ -16,13 +17,30 @@ mixins
     }
   }
 
+  // fonts
+  @mixin fs($sizeValue: 16) {
+    font-size: calc($sizeValue / 10) + rem;
+    font-size: $sizeValue + px;
+  }
+
 /************
 vars
 *************/
 
 $red: #b81a0a;
-$white: #e6e6e6; 
+$yellow: #dd8e1d;
+$white: #e6e6e6;
 
+$max-width: 1300px;
+
+/************
+fonts
+*************/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,600&family=Montserrat:ital@0;1&display=swap');
+
+$heading-font: 'Barlow Condensed', sans-serif;
+$body-font: 'Montserrat', sans-serif;
 /************
 bird animation
 *************/
@@ -48,16 +66,66 @@ fix boxes
 /************
 general
 *************/
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
 
 body {
-    background-color: #000;
+    background: url('../img/bg.png');
     margin: 0;
     color: $white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $body-font;
+    @include fs(16);
+}
+
+#root {
+    max-width: $max-width;
+    padding: 0 4rem;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
-    margin-top: 0;
+    font-family: $heading-font;
+    line-height: 1;
+}
+h1 {
+    @include fs(54);
+}
+h2 {
+    @include fs(42);
+}
+h3 {
+    @include fs(30);
+}
+h4 {
+    @include fs(20);
+}
+a {
+    color: $yellow;
+    text-decoration: none;
+    &:hover, 
+    &:active {
+        filter: brightness(0.85);
+    }
+}
+
+// To make videos responsive
+.resp-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    border: 1px solid $white;
+    overflow: hidden;
+    iframe,
+    object,
+    embed { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /************
@@ -88,7 +156,9 @@ header styles
 *************/
 
 .header {
-    margin: 3rem 1rem;
+    padding: 3rem 0;
+    margin: 0 0 3rem;
+    max-width: $max-width;
     &__title {
         margin: 0;
         padding: 0;
@@ -122,37 +192,44 @@ header styles
         }
     }
 }
+.header-small {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: -4rem;
+        background-color: $red;
+        z-index: -1;
+    }
+    &__img--logo {
+        position: relative;
+        z-index: 0;
+        width: 7%;
+        display: block;
+        filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
+    }
+}
 
 /************
 main styles
 *************/
 
 .main {
-    margin: 3rem 2rem;
+    padding: 3rem 0;
+    margin: 3rem 0;
     text-align: center;
-    &__video-wrapper {
+    &__feature-video {
         margin: 0 0 3rem;
         padding: 3rem 10%;
         text-align: center;
         border-top: 1px solid $red;
         border-bottom: 1px solid $red;
-    }
-    &__video {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px;
-        height: 0;
-        border: 1px solid $white;
-        overflow: hidden;
-        iframe,
-        object,
-        embed { 
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
     }
     &__link-list {
         margin: 0;
@@ -164,21 +241,71 @@ main styles
         margin: 0 0 1rem;
         padding: 0;
     }
-    &__upper-content {
-        padding: 3rem 2rem;
+    &__bio-releases {
         display: flex;
         justify-content: center;
+        padding: 3rem 0;
+        max-width: $max-width;
+        text-align: left;
         .bio {
-            text-align: left;
-            width: 65%;
+            width: 66%;
         }
-        .iframe {
-            width: 35%;
-            > div {
-                font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;
+        .releases {
+            width: 33%;
+            .iframe > div {
+                font-size: 10px;
+                color: #ccc;
+                line-break: anywhere;
+                word-break: normal;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+                font-weight: 100;
             }
-            a {
-                color: #cccccc; text-decoration: none;
+        }
+    }
+    &__photos {
+        text-align: left;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+    &__photos-heading {
+        width: 100%;
+    }
+    &__photos-photo {
+        width: 31%;
+        img {
+            width: 100%;
+        }
+    }
+    &__videos {
+        text-align: left;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    &__video-heading {
+        width: 100%;
+    }
+    &__videos-video {
+        width: 49%;
+    }
+    @include for-size(phone-only) {
+        &__photos-photo {
+            width: 100%;
+        }
+        &__videos-video {
+            width: 100%;
+        }
+        &__bio-releases {
+            display: block;
+            .bio {
+                width: 100%;
+            }
+            .releases {
+                width: 100%;
             }
         }
     }
@@ -189,7 +316,8 @@ footer styles
 *************/
 
 .footer {
-    margin: 3rem 1rem;
+    padding: 3rem 0;
+    margin: 3rem 0;
     &__social-link-list {
         display: flex;
         justify-content: center;

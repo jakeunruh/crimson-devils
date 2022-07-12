@@ -1,5 +1,5 @@
 import Header from "../components/Header"
-import Video from "../components/Video";
+import VideoSJ from "../components/VideoSJ";
 import LinkList from "../components/LinkList";
 import SocialLinkList from "../components/SocialLinkList";
 
@@ -8,7 +8,9 @@ function Home() {
     <>
       <Header />
       <main className="main">
-        <Video />
+        <div className="main__feature-video">
+          <VideoSJ />
+        </div>
         <LinkList />
       </main>
       <footer className="footer">
