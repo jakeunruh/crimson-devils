@@ -27,7 +27,7 @@ mixins
 vars
 *************/
 
-$red: #b81a0a;
+$red: #ac0f1b;
 $yellow: #dd8d1d;
 $white: #f2f4f3;
 $black: #0a0908;
@@ -194,7 +194,7 @@ header styles
         width: 25%;
         margin: 0 auto;
         display: block;
-        filter: invert(13%) sepia(69%) saturate(2476%) hue-rotate(369deg) brightness(160%) contrast(106%);
+        filter: invert(11%) sepia(72%) saturate(5336%) hue-rotate(348deg) brightness(90%) contrast(98%);
         animation: birdMove 1000ms;
     }
     @include for-size(phone-only) {
