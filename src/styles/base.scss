@@ -168,7 +168,7 @@ header styles
         position: absolute;
         top: 0;
         left: -4rem;
-        width: 100vw;
+        width: calc(100vw + 4rem);
         height: 100%;
         background: url('../img/bg.jpg') no-repeat center;
         background-size: cover;
@@ -264,17 +264,39 @@ main styles
         margin: 0 0 1rem;
         padding: 0;
     }
-    &__bio-releases {
+    > section:nth-child(odd) {
+        color: $black;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -8rem;
+            width: calc(100vw + 4rem);
+            height: 100%;
+            background-color: $red;
+            z-index: -1;
+        }
+    }
+    &__bio-releases,
+    &__description-tracklist,
+    &__album-audio,
+    &__band {
+        max-width: $max-width;
+        text-align: left;
         display: flex;
         justify-content: center;
         padding: 3rem 0;
-        max-width: $max-width;
-        text-align: left;
-        .bio {
+        gap: 2rem;
+        & > section {
             width: 66%;
+            & + section {
+                width: 33%;
+            }        
         }
+    }
+    &__bio-releases {
         .releases {
-            width: 33%;
             .iframe > div {
                 font-size: 10px;
                 color: #ccc;
@@ -285,6 +307,54 @@ main styles
                 text-overflow: ellipsis;
                 font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
                 font-weight: 100;
+            }
+        }
+    }
+    &__album-audio {
+        .album {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 60%;
+                box-shadow: 0 0 10px $black;
+            }
+        }
+        .audio {
+            .iframe > div {
+                font-size: 10px;
+                color: #ccc;
+                line-break: anywhere;
+                word-break: normal;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+                font-weight: 100;
+            }
+        }
+    }
+    &__description-tracklist {
+        .tracklist {
+            ol {
+                margin: 0;
+            }
+        }
+    }
+    &__band {
+        .main__band-info {
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    list-style: none;
+                }
+            }
+            h3{
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 1rem;
             }
         }
     }
