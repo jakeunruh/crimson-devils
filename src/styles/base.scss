@@ -279,6 +279,8 @@ main styles
         }
     }
     &__bio-releases,
+    &__photos,
+    &__videos,
     &__description-tracklist,
     &__album-audio,
     &__band {
@@ -286,7 +288,7 @@ main styles
         text-align: left;
         display: flex;
         justify-content: center;
-        padding: 3rem 0;
+        padding: 1rem 0 4rem;
         gap: 2rem;
         & > section {
             width: 66%;
@@ -361,14 +363,13 @@ main styles
     &__photos {
         text-align: left;
         display: flex;
-        gap: 3rem;
         flex-wrap: wrap;
     }
     &__photos-heading {
         width: 100%;
     }
     &__photos-photo {
-        width: 31%;
+       flex: 1;
         img {
             width: 100%;
         }
@@ -389,8 +390,12 @@ main styles
         &__feature-video {
             padding: 0;
         }
+        &__photos {
+            display: block;
+        }
         &__photos-photo {
             width: 100%;
+            margin-bottom: 1rem;
         }
         &__videos-video {
             width: 100%;
