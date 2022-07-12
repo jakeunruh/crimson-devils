@@ -28,8 +28,10 @@ vars
 *************/
 
 $red: #b81a0a;
-$yellow: #dd8e1d;
-$white: #e6e6e6;
+$yellow: #dd8d1d;
+$white: #f2f4f3;
+$black: #0a0908;
+$gunmetal: #22333b;
 
 $max-width: 1300px;
 
@@ -71,7 +73,8 @@ html {
 }
 
 body {
-    background: url('../img/bg.png');
+    //background: url('../img/bg.png');
+    background-color: $black;
     margin: 0;
     color: $white;
     font-family: $body-font;
@@ -156,9 +159,21 @@ header styles
 *************/
 
 .header {
-    padding: 3rem 0;
-    margin: 0 0 3rem;
+    position: relative;
+    padding: 10rem 0 8.5rem;
+    margin: 0 0 1.5rem;
     max-width: $max-width;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -4rem;
+        width: 100vw;
+        height: 100%;
+        background: url('../img/band.jpg') no-repeat center;
+        background-size: cover;
+        opacity: .2;
+    }
     &__title {
         margin: 0;
         padding: 0;
@@ -183,6 +198,7 @@ header styles
         animation: birdMove 1000ms;
     }
     @include for-size(phone-only) {
+        padding: 4rem 0 2.5rem;
         &__img--logo {
             width: 50%;
         }
@@ -201,16 +217,19 @@ header styles
     &:before {
         content: '';
         position: absolute;
+        top: 0;
+        left: -4rem;
         width: 100vw;
         height: 100%;
-        left: -4rem;
-        background-color: $red;
+        background: url('../img/band.jpg') no-repeat center -650px;
+        background-size: cover;
+        opacity: .5;
         z-index: -1;
     }
     &__img--logo {
         position: relative;
         z-index: 0;
-        width: 7%;
+        width: 100px;
         display: block;
         filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
     }
@@ -221,15 +240,24 @@ main styles
 *************/
 
 .main {
-    padding: 3rem 0;
-    margin: 3rem 0;
+    padding: 0 0 3rem;
+    margin: 0 0 3rem;
     text-align: center;
     &__feature-video {
+        position: relative;
         margin: 0 0 3rem;
         padding: 3rem 10%;
         text-align: center;
-        border-top: 1px solid $red;
-        border-bottom: 1px solid $red;
+        // &:before {
+        //     content: '';
+        //     position: absolute;
+        //     width: 100vw;
+        //     height: 100%;
+        //     top: 0;
+        //     left: -4rem;
+        //     background-color: $gunmetal;
+        //     z-index: -1;
+        // }
     }
     &__link-list {
         margin: 0;
