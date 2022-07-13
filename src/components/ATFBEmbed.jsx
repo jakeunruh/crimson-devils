@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/atfb-embed.scss";
 
 function ATFBEmbed() {
   return (

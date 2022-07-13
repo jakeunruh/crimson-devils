@@ -9,12 +9,12 @@ function BandSection() {
         <section className="main__band-info">
             <ul>
                 <li>
-                    <h3>Jake Unruh</h3>
-                    <p>Guitars - Vocals</p>
+                    <h3>Patrick Pascucci</h3>
+                    <p>Drums</p>
                 </li>
                 <li>
-                    <h3>Patric Pascucci</h3>
-                    <p>Drums</p>
+                    <h3>Jake Unruh</h3>
+                    <p>Guitars - Vocals</p>
                 </li>
                 <li>
                     <h3>Curt Christenson</h3>
