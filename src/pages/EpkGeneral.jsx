@@ -6,7 +6,10 @@ import VideoSJ from "../components/VideoSJ";
 import Curt from "../img/curt.jpg";
 import Patrick from "../img/patrick.jpg";
 import Jake from "../img/jake.jpg";
-// import Band from "../img/band.jpg";
+import Band from "../img/epk/crimson-devils-8x10.jpg";
+import BandHi from "../img/epk/crimson-devils-8x10.png";
+import BandTruck from "../img/epk/crimson-devils-truck-small.jpg";
+import BandTruckHi from "../img/epk/crimson-devils-truck.png";
 
 function EpkGeneral() {
   return (
@@ -25,7 +28,10 @@ function EpkGeneral() {
           </section>
         </section>
         <section className="main__photos">
-          <h2 className="main__photos-heading">Press Photos</h2>
+          <h2 className="main__photos-heading">Photos</h2>
+          <div className="main__photos-photo">
+            <a href={BandTruckHi}><img src={BandTruck} alt="Curt Christenson" /></a>
+          </div>
           <div className="main__photos-photo">
             <a href={Curt}><img src={Curt} alt="Curt Christenson" /></a>
           </div>
@@ -46,6 +52,9 @@ function EpkGeneral() {
             <VideoBNB />
             <h4>Bad News Blues</h4>
           </div>
+        </section>
+        <section className="main__promo">
+          <a href={BandHi}><img className="main__photos-photo" src={Band} alt="Jake Unruh" /></a>
         </section>
       </main>
       <footer className="footer">
