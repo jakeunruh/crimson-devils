@@ -126,6 +126,28 @@ a {
         filter: brightness(0.85);
     }
 }
+blockquote {
+    border-left: 10px solid $maroon;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "'";
+    &:before {
+        color: $maroon;
+        content: '\201c';
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+    p {
+        display: inline;
+        &:last-child {
+            display: block;
+            text-align: right;
+            margin: .5rem 0 0;
+        }
+    }
+  }
 
 // To make videos responsive
 .resp-video {
@@ -284,7 +306,8 @@ main styles
     &__description-tracklist,
     &__album-audio,
     &__promo,
-    &__band {
+    &__band,
+    &__press {
         max-width: $max-width;
         text-align: left;
         display: flex;
@@ -429,6 +452,20 @@ main styles
         img {
             width: 100%
         }
+    }
+    &__press {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+    }
+    &__press-heading {
+        grid-column: 1 / 4;
+    }
+    &__press-card {
+        padding: 1rem;
+        color: $black;
+        background: $white;
     }
     @include for-size(phone-only) {
         &__feature-video {
