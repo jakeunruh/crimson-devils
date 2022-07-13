@@ -1,4 +1,4 @@
-import React from 'react'
+import BandPic from "../img/epk/crimson-devils-truck.png";
 
 function BandSection() {
   return (
@@ -20,6 +20,7 @@ function BandSection() {
                     <h3>Curt Christenson</h3>
                     <p>Bass</p>
                 </li>
+                <p><a href={BandPic} target="_blank" rel="noreferrer">Hi-Res Band Photo</a></p>
             </ul>
         </section>
     </>
