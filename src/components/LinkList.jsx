@@ -1,3 +1,4 @@
+import "../styles/link-list.scss";
 function LinkList() {
   return (
     <ul className="main__link-list">

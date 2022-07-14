@@ -1,0 +1,7 @@
+@use "./mixins.scss" as m;
+
+@include m.for-size(phone-only) {
+    .main__videos-video {
+        width: 100%;
+    }
+}

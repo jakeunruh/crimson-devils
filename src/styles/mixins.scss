@@ -1,0 +1,51 @@
+/************
+mixins
+*************/
+
+// breakpoints
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-down {
+        @media (max-width: 600px) { @content; }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) { @content; }
+    }
+}
+
+// fonts
+@mixin fs($sizeValue: 16) {
+    font-size: calc($sizeValue / 10) + rem;
+    font-size: $sizeValue + px;
+}
+
+// centered background
+@mixin fullWidth() {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/************
+bird animation
+*************/
+
+@keyframes birdMove {
+    0% {
+        transform: scale(.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

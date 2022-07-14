@@ -1,5 +1,5 @@
 import BandSection from "../components/BandSection";
-import FHEmbed from "../components/FHEmbed";
+import EmbedFH from "../components/EmbedFH";
 import HeaderSmall from "../components/HeaderSmall"
 import SocialLinkList from "../components/SocialLinkList";
 import FH from "../img/epk/fh-hi-res.png";
@@ -16,7 +16,7 @@ function EpkFH() {
           </section>
           <section className="audio">
             <h2>Listen Now</h2>
-            <FHEmbed />
+            <EmbedFH />
           </section>
         </section>
         <section className="main__description-tracklist">
@@ -43,7 +43,11 @@ function EpkFH() {
           </section>
         </section>
         <section className="main__band">
-          <BandSection />
+          <section className='main__band-image'>
+          </section>
+          <section className="main__band-info">
+            <BandSection />
+          </section>
         </section>
       </main>
       <footer className="footer">

@@ -1,0 +1,15 @@
+@use "./mixins.scss" as m;
+
+.main {
+    &__photos-photo {
+        img {
+            width: 100%;
+        }
+    }
+    @include m.for-size(phone-only) {
+        &__photos-photo {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}

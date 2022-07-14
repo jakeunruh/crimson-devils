@@ -1,0 +1,37 @@
+@use "./mixins.scss" as m;
+@use "./vars.scss" as v;
+
+.main {
+    &__press-card {
+        padding: 1rem;
+        color: v.$black;
+        background: v.$white;
+        blockquote {
+            border-left: 10px solid v.$maroon;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "'";
+            &:before {
+                color: v.$maroon;
+                content: '\201c';
+                font-size: 4em;
+                line-height: 0.1em;
+                margin-right: 0.25em;
+                vertical-align: -0.4em;
+            }
+            p {
+                display: inline;
+                &:last-child {
+                    display: block;
+                    text-align: right;
+                    margin: .5rem 0 0;
+                }
+            }
+        }
+    }
+    @include m.for-size(phone-only) {
+        &__press-card {
+            margin-bottom: 1rem;
+        }
+    }
+}

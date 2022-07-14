@@ -1,0 +1,48 @@
+@use "./vars.scss" as v;
+@use "./mixins.scss" as m;
+
+.header {
+    position: relative;
+    padding: 10rem 0 8.5rem;
+    margin: 0 0 1.5rem;
+    max-width: v.$max-width;
+    &:before {
+        @include m.fullWidth();
+        background: url('../img/bg.jpg') no-repeat center;
+        background-size: cover;
+        opacity: .4;
+    }
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+    }
+    &__img--logo {
+        position: relative;
+        z-index: 0;
+        width: 35%;
+        margin: 0 auto;
+        display: block;
+        filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
+    }
+    &__img--bird {
+        position: relative;
+        z-index: 1;
+        top: -15px;
+        width: 25%;
+        margin: 0 auto;
+        display: block;
+        filter: invert(11%) sepia(72%) saturate(5336%) hue-rotate(348deg) brightness(90%) contrast(98%);
+        animation: birdMove 1000ms;
+    }
+    @include m.for-size(phone-only) {
+        padding: 4rem 0 2.5rem;
+        &__img--logo {
+            width: 50%;
+        }
+        &__img--bird {
+            width: 35%;
+            top: -10px;
+        }
+    }
+}

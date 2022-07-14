@@ -1,76 +1,5 @@
-/************
-vars
-*************/
-
-$red: #A1171B;
-$yellow: #D47404;
-$white: #e9e5e4;
-$black: #0D0604;
-$orange: #B3450B;
-$maroon: #5F150E;
-
-$max-width: 1300px;
-
-/************
-fonts
-*************/
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,600&family=Montserrat:wght@300;500;700;900&display=swap');
-
-$heading-font: 'Barlow Condensed', sans-serif;
-$body-font: 'Montserrat', sans-serif;
-
-/************
-mixins
-*************/
-
-// breakpoints
-@mixin for-size($size) {
-    @if $size == phone-only {
-      @media (max-width: 599px) { @content; }
-    } @else if $size == tablet-portrait-down {
-        @media (max-width: 600px) { @content; }
-    } @else if $size == tablet-portrait-up {
-      @media (min-width: 600px) { @content; }
-    } @else if $size == tablet-landscape-up {
-      @media (min-width: 900px) { @content; }
-    } @else if $size == desktop-up {
-      @media (min-width: 1200px) { @content; }
-    } @else if $size == big-desktop-up {
-      @media (min-width: 1800px) { @content; }
-    }
-  }
-
-  // fonts
-  @mixin fs($sizeValue: 16) {
-    font-size: calc($sizeValue / 10) + rem;
-    font-size: $sizeValue + px;
-  }
-
-  // centered background
-  @mixin fullWidth() {
-    content: '';
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-/************
-bird animation
-*************/
-
-@keyframes birdMove {
-    0% {
-        transform: scale(.5);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
+@use "./vars.scss" as v;
+@use "./mixins.scss" as m;
 
 /************
 fix boxes
@@ -91,73 +20,50 @@ html {
 
 body {
     //background: url('../img/bg.png');
-    background-color: $black;
+    background-color: v.$black;
     margin: 0;
-    color: $white;
-    font-family: $body-font;
-    @include fs(16);
+    color: v.$white;
+    font-family: v.$body-font;
+    @include m.fs(16);
 }
 
 #root {
-    max-width: $max-width;
+    max-width: v.$max-width;
     padding: 0 4rem;
     margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: $heading-font;
+    font-family: v.$heading-font;
     line-height: 1;
 }
 h1 {
-    @include fs(54);
+    @include m.fs(54);
 }
 h2 {
-    @include fs(42);
+    @include m.fs(42);
 }
 h3 {
-    @include fs(30);
+    @include m.fs(30);
 }
 h4 {
-    @include fs(20);
+    @include m.fs(20);
 }
 a {
-    color: $yellow;
+    color: v.$yellow;
     text-decoration: none;
     &:hover, 
     &:active {
         filter: brightness(0.85);
     }
 }
-blockquote {
-    border-left: 10px solid $maroon;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    quotes: "'";
-    &:before {
-        color: $maroon;
-        content: '\201c';
-        font-size: 4em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }
-    p {
-        display: inline;
-        &:last-child {
-            display: block;
-            text-align: right;
-            margin: .5rem 0 0;
-        }
-    }
-  }
-
 // To make videos responsive
 .resp-video {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px;
     height: 0;
-    border: 1px solid $white;
+    border: 1px solid v.$white;
     overflow: hidden;
     iframe,
     object,
@@ -178,94 +84,18 @@ buttons
     display: inline-block;
     min-width: 350px;
     background: transparent;
-    color: $white;
-    border: 2px solid $red;
+    color: v.$white;
+    border: 2px solid v.$red;
     border-radius: 5px;
     padding: 15px;
     text-decoration: none;
     &:hover {
-        background-color: rgba($red, .5);
+        background-color: rgba(v.$red, .5);
     }
-    @include for-size(phone-only) {
+    @include m.for-size(phone-only) {
         min-width: 0;
         width: 100%;
         margin: 0 auto;
-    }
-}
-
-/************
-header styles
-*************/
-
-.header {
-    position: relative;
-    padding: 10rem 0 8.5rem;
-    margin: 0 0 1.5rem;
-    max-width: $max-width;
-    &:before {
-        @include fullWidth();
-        background: url('../img/bg.jpg') no-repeat center;
-        background-size: cover;
-        opacity: .4;
-    }
-    &__title {
-        margin: 0;
-        padding: 0;
-        font-size: 0;
-    }
-    &__img--logo {
-        position: relative;
-        z-index: 0;
-        width: 35%;
-        margin: 0 auto;
-        display: block;
-        filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
-    }
-    &__img--bird {
-        position: relative;
-        z-index: 1;
-        top: -15px;
-        width: 25%;
-        margin: 0 auto;
-        display: block;
-        filter: invert(11%) sepia(72%) saturate(5336%) hue-rotate(348deg) brightness(90%) contrast(98%);
-        animation: birdMove 1000ms;
-    }
-    @include for-size(phone-only) {
-        padding: 4rem 0 2.5rem;
-        &__img--logo {
-            width: 50%;
-        }
-        &__img--bird {
-            width: 35%;
-            top: -10px;
-        }
-    }
-}
-.header-small {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    &:before {
-        @include fullWidth();
-        background: url('../img/bg.jpg') no-repeat center;
-        background-size: cover;
-        opacity: .7;
-        z-index: -1;
-    }
-    &__img--logo {
-        position: relative;
-        z-index: 0;
-        width: 100px;
-        display: block;
-        filter: invert(99%) sepia(1%) saturate(4349%) hue-rotate(189deg) brightness(118%) contrast(80%);
-    }
-    @include for-size(phone-only) {
-        &:before {
-            background-position: center center;
-        }
     }
 }
 
@@ -277,30 +107,22 @@ main styles
     padding: 0 0 3rem;
     margin: 0 0 3rem;
     text-align: center;
+
+    // alternate black / red backgrounds on sections in .main
+    > section:nth-child(odd) {
+        color: v.$black;
+        position: relative;
+        &:before {
+            @include m.fullWidth();
+            background-color: v.$red;
+            z-index: -1;
+        }
+    }
     &__feature-video {
         position: relative;
         margin: 0 0 3rem;
         padding: 3rem 10%;
         text-align: center;
-    }
-    &__link-list {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    &__link-list-item {
-        list-style: none;
-        margin: 0 0 1rem;
-        padding: 0;
-    }
-    > section:nth-child(odd) {
-        color: $black;
-        position: relative;
-        &:before {
-            @include fullWidth();
-            background-color: $red;
-            z-index: -1;
-        }
     }
     &__bio-releases,
     &__photos,
@@ -310,7 +132,7 @@ main styles
     &__promo,
     &__band,
     &__press {
-        max-width: $max-width;
+        max-width: v.$max-width;
         text-align: left;
         display: flex;
         justify-content: center;
@@ -322,7 +144,7 @@ main styles
                 width: 33%;
             }        
         }
-        @include for-size(phone-only) {
+        @include m.for-size(phone-only) {
             display: block;
             > section {
                 width: 100%;
@@ -354,7 +176,7 @@ main styles
             align-items: center;
             img {
                 width: 60%;
-                box-shadow: 0 0 10px $black;
+                box-shadow: 0 0 10px v.$black;
             }
         }
     }
@@ -367,16 +189,16 @@ main styles
                 counter-reset: my-awesome-counter;
                 li {
                     padding: .3rem 0;
-                    border-top: 1px solid $maroon;
+                    border-top: 1px solid v.$maroon;
                     font-weight: bold;
-                    color: $black;
+                    color: v.$black;
                     counter-increment: my-awesome-counter;
                     &:nth-child(1) {
                         border: none;
                     }
                     &:before {
                         content: counter(my-awesome-counter)'. ';
-                        color: $maroon;
+                        color: v.$maroon;
                     }
                 }
             }
@@ -407,20 +229,6 @@ main styles
             align-items: center;
             text-align: right;
             width: 30%;
-            ul {
-                padding: 0;
-                margin: 0 4rem 0 0;
-                li {
-                    list-style: none;
-                    padding: 1rem 0;
-                }
-            }
-            h3{
-                margin: 0 0 1rem;
-            }
-            p {
-                margin-top: 1rem;
-            }
         }
     }
     &__photos {
@@ -431,11 +239,6 @@ main styles
     }
     &__photos-heading {
         grid-column: 1 / 3;
-    }
-    &__photos-photo {
-        img {
-            width: 100%;
-        }
     }
     &__videos {
         text-align: left;
@@ -461,27 +264,18 @@ main styles
     &__press-heading {
         grid-column: 1 / 4;
     }
-    &__press-card {
-        padding: 1rem;
-        color: $black;
-        background: $white;
-    }
-    @include for-size(phone-only) {
+    @include m.for-size(phone-only) {
+        &__photos,
+        &__bio-releases,
+        &__band,
+        &__press,
+        .main__band-info {
+            display: block;
+        }
         &__feature-video {
             padding: 0;
         }
-        &__photos {
-            display: block;
-        }
-        &__photos-photo {
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-        &__videos-video {
-            width: 100%;
-        }
         &__bio-releases {
-            display: block;
             .bio {
                 width: 100%;
             }
@@ -497,7 +291,6 @@ main styles
             }
         }
         &__band {
-            display: block;
             .main__band-image {
                 position: relative;
                 order: 2;
@@ -513,19 +306,9 @@ main styles
                 }
             }
             .main__band-info {
-                display: block;
                 text-align: center;
                 padding: 2rem 0;
                 width: 100%;
-                ul li {
-                    padding: 0;
-                }
-            }
-        }
-        &__press {
-            display: block;
-    .main__press-card {
-                margin-bottom: 1rem;
             }
         }
     }
@@ -538,20 +321,4 @@ footer styles
 .footer {
     padding: 3rem 0;
     margin: 3rem 0;
-    &__social-link-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-    }
-    &__social-link-list-item {
-        list-style: none;
-        .social-svg {
-            &:hover {
-                background: $white;
-            }
-        }
-    }
 }

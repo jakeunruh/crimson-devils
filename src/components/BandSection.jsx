@@ -1,30 +1,35 @@
 import BandPic from "../img/epk/crimson-devils-truck.png";
+import "../styles/band-section.scss";
 
 function BandSection() {
-  return (
-    <>
-        <section className='main__band-image'>
-        
-        </section>
-        <section className="main__band-info">
-            <ul>
-                <li>
-                    <h3>Patrick Pascucci</h3>
-                    <p>Drums</p>
-                </li>
-                <li>
-                    <h3>Jake Unruh</h3>
-                    <p>Guitars - Vocals</p>
-                </li>
-                <li>
-                    <h3>Curt Christenson</h3>
-                    <p>Bass</p>
-                </li>
-                <p><a href={BandPic} target="_blank" rel="noreferrer">Hi-Res Band Photo</a></p>
-            </ul>
-        </section>
-    </>
-  )
-}
+    const memberInfo = [
+        {
+            name: "Patrick Pascucci",
+            duty: "Drums"
+        },
+        {
+            name: "Jake Unruh",
+            duty: "Guitars - Vocals"
+        },
+        {
+            name: "Curt Christenson",
+            duty: "Bass"
+        }
+    ];
+    const renderMember = (member) => {
+        return (
+            <li key={member.toString()}>
+                <h3>{member.name}</h3>
+                <p>{member.duty}</p>
+            </li>
+        );
+    };
+    return (
+        <ul>
+            {memberInfo.map(renderMember)}
+            <p><a href={BandPic} target="_blank" rel="noreferrer">Hi-Res Band Photo</a></p>
+        </ul>
+    );
+};
 
 export default BandSection

@@ -1,5 +1,6 @@
 import Logo from "../img/logo.svg";
 import Bird from "../img/bird.svg";
+import "../styles/header.scss";
 
 function Header() {
   return (

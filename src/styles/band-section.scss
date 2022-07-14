@@ -1,0 +1,21 @@
+@use "./mixins.scss" as m;
+
+ul {
+    padding: 0;
+    margin: 0 4rem 0 0;
+    li {
+        list-style: none;
+        padding: 1rem 0;
+    }
+}
+h3{
+    margin: 0 0 1rem;
+}
+p {
+    margin-top: 1rem;
+}
+@include m.for-size(phone-only) {
+    ul li {
+        padding: 0;
+    }
+}

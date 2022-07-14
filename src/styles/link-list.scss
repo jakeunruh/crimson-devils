@@ -1,0 +1,12 @@
+.main {
+    &__link-list {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    &__link-list-item {
+        list-style: none;
+        margin: 0 0 1rem;
+        padding: 0;
+    }
+}

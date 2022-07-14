@@ -1,4 +1,5 @@
 import Logo from "../img/logo.svg";
+import "../styles/header-small.scss";
 
 function HeaderSmall() {
   return (

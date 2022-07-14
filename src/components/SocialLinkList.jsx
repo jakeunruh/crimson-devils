@@ -1,4 +1,5 @@
 import { SocialIcon } from 'react-social-icons';
+import "../styles/social-link-list.scss";
 
 function SocialLinkList() {
   return (
