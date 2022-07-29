@@ -5,7 +5,6 @@ function HeaderSmall() {
   return (
     <header className="header-small">
       <img className="header-small__img--logo" src={Logo} alt="Crimson Devils" />
-      <a href="/">HOME</a>
     </header>
   )
 }
