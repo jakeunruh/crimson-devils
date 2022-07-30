@@ -1,3 +1,5 @@
+import React from "react";
+
 function VideoSJ() {
   return (
       <div className="resp-video">

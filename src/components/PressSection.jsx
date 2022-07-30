@@ -1,4 +1,5 @@
 import '../styles/press-section.scss';
+import React from 'react';
 
 function PressSection() {
     const pressCardInfo = [

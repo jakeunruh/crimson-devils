@@ -1,4 +1,6 @@
 import "../styles/link-list.scss";
+import React from "react";
+
 function LinkList() {
   return (
     <ul className="main__link-list">

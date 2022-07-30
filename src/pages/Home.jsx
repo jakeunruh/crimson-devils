@@ -2,15 +2,18 @@ import Header from "../components/Header"
 import VideoSJ from "../components/VideoSJ";
 import LinkList from "../components/LinkList";
 import SocialLinkList from "../components/SocialLinkList";
+import ShowWidget from "../components/ShowWidget";
+import React from "react";
 
 function Home() {
   return (
     <>
       <Header />
       <main className="main">
-        <div className="main__feature-video">
+        <ShowWidget />
+        <section className="main__feature-video">
           <VideoSJ />
-        </div>
+        </section>
         <LinkList />
       </main>
       <footer className="footer">

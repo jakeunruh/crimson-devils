@@ -1,6 +1,7 @@
 import VideoSJ from "./VideoSJ";
 import VideoBNB from "./VideoBNB";
 import "../styles/video-section.scss";
+import React from "react";
 
 function VideoSection() {
     const videoInfo = [
@@ -15,10 +16,10 @@ function VideoSection() {
     ];
     const renderVideo = (video) => {
         return (
-            <div className="main__videos-video">
+            <section className="main__videos-video">
                 {video.video}
                 <h4>{video.caption}</h4>
-            </div>
+            </section>
         );
     };
     return (

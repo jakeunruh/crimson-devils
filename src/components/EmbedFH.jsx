@@ -1,3 +1,5 @@
+import React from "react";
+
 function EmbedFH() {
   return (
     <section className='iframe iframe--fh'>

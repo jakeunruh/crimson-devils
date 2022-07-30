@@ -1,3 +1,4 @@
+import React from "react";
 import BandTruck from "../img/epk/crimson-devils-truck-small.jpg";
 import BandTruckHi from "../img/epk/crimson-devils-truck.png";
 import Curt from "../img/curt.jpg";

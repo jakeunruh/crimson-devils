@@ -6,6 +6,7 @@ import BandHi from "../img/epk/crimson-devils-8x10.png";
 import PressSection from "../components/PressSection";
 import VideoSection from "../components/VideoSection";
 import PhotosSection from "../components/PhotosSection";
+import React from "react";
 
 function EpkGeneral() {
   return (

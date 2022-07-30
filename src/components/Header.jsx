@@ -1,6 +1,7 @@
 import Logo from "../img/logo.svg";
 import Bird from "../img/bird.svg";
 import "../styles/header.scss";
+import React from "react";
 
 function Header() {
   return (

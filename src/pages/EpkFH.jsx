@@ -3,6 +3,7 @@ import EmbedFH from "../components/EmbedFH";
 import HeaderSmall from "../components/HeaderSmall"
 import SocialLinkList from "../components/SocialLinkList";
 import FH from "../img/epk/fh-hi-res.png";
+import React from "react";
 
 function EpkFH() {
   return (

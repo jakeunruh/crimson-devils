@@ -1,5 +1,6 @@
 import BandPic from "../img/epk/crimson-devils-truck.png";
 import "../styles/band-section.scss";
+import React from "react";
 
 function BandSection() {
     const memberInfo = [

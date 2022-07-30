@@ -1,5 +1,6 @@
 import Logo from "../img/logo.svg";
 import "../styles/header-small.scss";
+import React from "react";
 
 function HeaderSmall() {
   return (
