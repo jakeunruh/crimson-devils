@@ -1,5 +1,25 @@
+@use "./vars.scss" as v;
+
 .main {
     &__show-widget {
         padding: 30px 0;
+        .bit-widget {
+            &.bit-layout-desktop {
+                .bit-details {
+                    display: block;
+                }
+                .bit-location {
+                    padding-left: 0;
+                }
+            }
+            .bit-follow-section-wrapper {
+                color: v.$yellow;
+                font-size: 18px;
+            }
+            .bit-follow-section-cta {
+                margin: 15px 0;
+                font-size: 13px;
+            }
+        }
     }
 }

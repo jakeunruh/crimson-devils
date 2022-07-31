@@ -3,6 +3,7 @@ import EmbedFH from "../components/EmbedFH";
 import HeaderSmall from "../components/HeaderSmall"
 import SocialLinkList from "../components/SocialLinkList";
 import FH from "../img/epk/fh-hi-res.png";
+import ShowWidget from "../components/ShowWidget"
 import React from "react";
 
 function EpkFH() {
@@ -51,6 +52,7 @@ function EpkFH() {
             <BandSection />
           </section>
         </section>
+        <ShowWidget />
       </main>
       <footer className="footer">
         <SocialLinkList />
