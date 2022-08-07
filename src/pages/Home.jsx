@@ -2,7 +2,6 @@ import Header from "../components/Header"
 import VideoSJ from "../components/VideoSJ";
 import LinkList from "../components/LinkList";
 import SocialLinkList from "../components/SocialLinkList";
-import ShowWidget from "../components/ShowWidget";
 import React from "react";
 
 function Home() {
@@ -10,7 +9,6 @@ function Home() {
     <>
       <Header />
       <main className="main">
-        <ShowWidget />
         <section className="main__feature-video">
           <VideoSJ />
         </section>

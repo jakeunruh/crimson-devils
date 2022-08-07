@@ -19,7 +19,7 @@ function BandSection() {
     ];
     const renderMember = (member) => {
         return (
-            <li key={member.toString()}>
+            <li key={member.name.toString()}>
                 <h3>{member.name}</h3>
                 <p>{member.duty}</p>
             </li>
