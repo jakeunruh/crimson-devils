@@ -17,7 +17,7 @@ function EpkGeneral() {
         <section className="main__bio-releases">
           <section className="bio">
             <h2>Approved artist bio for immediate release</h2>
-            <p>They self-released their first full length in the summer of 2017. </p>
+            <p>Hailing from Austin, Texas, <strong>Crimson Devils</strong> is a power trio that holds its roots in the more excitable, heavier side of rock and roll. By blazing a trail with their own high-powered attitude and vision, they have separated themselves from the masses and made room to create something truly worth hearing.</p>
           </section>
           <section className="releases">
             <h2>Releases</h2>
