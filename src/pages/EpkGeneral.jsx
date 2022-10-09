@@ -40,12 +40,12 @@ function EpkGeneral() {
             <BandSection />
           </section>
         </section>
-        <section className="main__promo">
-          <a href={BandHi}><img className="main__photos-photo" src={Band} alt="Crimson Devils" /></a>
-        </section>
         <section className="main__press">
           <h2 className="main__press-heading">Press</h2>
           <PressSection />
+        </section>
+        <section className="main__promo">
+          <a href={BandHi}><img className="main__photos-photo" src={Band} alt="Crimson Devils" /></a>
         </section>
       </main>
       <footer className="footer">
