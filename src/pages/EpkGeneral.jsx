@@ -6,6 +6,7 @@ import BandHi from "../img/epk/crimson-devils-8x10.png";
 import PressSection from "../components/PressSection";
 import VideoSection from "../components/VideoSection";
 import PhotosSection from "../components/PhotosSection";
+import BandSection from "../components/BandSection";
 import React from "react";
 
 function EpkGeneral() {
@@ -32,8 +33,15 @@ function EpkGeneral() {
           <h2 className="main__video-heading">Video</h2>
           <VideoSection />
         </section>
+        <section className="main__band">
+          <section className='main__band-image'>
+          </section>
+          <section className="main__band-info">
+            <BandSection />
+          </section>
+        </section>
         <section className="main__promo">
-          <a href={BandHi}><img className="main__photos-photo" src={Band} alt="Jake Unruh" /></a>
+          <a href={BandHi}><img className="main__photos-photo" src={Band} alt="Crimson Devils" /></a>
         </section>
         <section className="main__press">
           <h2 className="main__press-heading">Press</h2>

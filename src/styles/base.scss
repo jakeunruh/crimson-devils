@@ -122,6 +122,24 @@ main styles
         text-align: center;
     }
     &__bio-releases,
+    &__album-audio,
+    &__description-tracklist {
+        & > section {
+            width: 66%;
+            & + section {
+                width: 33%;
+            }        
+        }
+        @include m.for-size(phone-only) {
+            > section {
+                width: 100%;
+                & + section {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__bio-releases,
     &__photos,
     &__videos,
     &__description-tracklist,
@@ -135,20 +153,14 @@ main styles
         justify-content: center;
         padding: 10px 0 40px;
         gap: 20px;
-        & > section {
-            width: 66%;
-            & + section {
-                width: 33%;
-            }        
-        }
         @include m.for-size(phone-only) {
             display: block;
-            > section {
-                width: 100%;
-                & + section {
-                    width: 100%;
-                }
-            }
+            // > section {
+            //     width: 100%;
+            //     & + section {
+            //         width: 100%;
+            //     }
+            // }
         }
     }
     &__bio-releases {

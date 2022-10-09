@@ -27,7 +27,7 @@ function EpkFH() {
             <p>Hailing from Austin, Texas, <strong>Crimson Devils</strong> is a power trio that holds its roots in the more excitable, heavier side of rock and roll. By blazing a trail with their own high-powered attitude and vision, they have separated themselves from the masses and made room to create something truly worth hearing.</p>
             <p>As the second release from Crimson Devils, <strong>Forever High</strong> is a progression and elevation of all the things that the band does best. Driving energy, tight grooves and all the amplitude pushed to the limit. <strong>Forever High</strong> hands out eleven tight, focused cuts that showcase the band's power, technical abilities and the capability to write a song with a hook. No filler here, just all the band's best work in one tasty place.</p>
             <p>Recorded and mixed by Jason Morales at the BBQ Shack.</p>
-            <p>Matered by Jerry Tubb at Terra Nova Mastering, Austin, Texas</p>
+            <p>Mastered by Jerry Tubb at Terra Nova Mastering, Austin, Texas</p>
           </section>
           <section className="tracklist">
             <h2>Tracklist</h2>
