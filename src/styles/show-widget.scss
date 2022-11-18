@@ -2,7 +2,10 @@
 
 .main {
     &__show-widget {
-        padding: 30px 0;
+        padding: 60px 0;
+        h2 {
+            margin-top: 0;
+        }
         .bit-widget {
             &.bit-layout-desktop {
                 .bit-details {

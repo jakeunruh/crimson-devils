@@ -1,0 +1,16 @@
+@use "./vars.scss" as v;
+
+.main {
+    &__news-area {
+        padding: 60px 0;
+        h2 {
+            margin-top: 0;
+        }
+        iframe {
+            border: 0;
+            width: 500px;
+            height: 120px;
+            margin: 0 auto;
+        }
+    }
+}

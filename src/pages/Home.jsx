@@ -4,6 +4,7 @@ import LinkList from "../components/LinkList";
 import SocialLinkList from "../components/SocialLinkList";
 import React from "react";
 import ShowWidget from "../components/ShowWidget";
+import NewsArea from "../components/NewsArea";
 
 function Home() {
   return (
@@ -11,8 +12,9 @@ function Home() {
       <Header />
       <main className="main">
         <ShowWidget />
+        <NewsArea />
         <section className="main__feature-video">
-          <VideoSJ />
+        <VideoSJ />
         </section>
         <LinkList />
       </main>

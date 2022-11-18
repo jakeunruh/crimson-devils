@@ -61,7 +61,7 @@ a {
 .resp-video {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px;
+    padding-top: 50px;
     height: 0;
     border: 1px solid v.$white;
     overflow: hidden;
@@ -118,7 +118,7 @@ main styles
     }
     &__feature-video {
         position: relative;
-        padding: 30px 10%;
+        padding: 60px 10%;
         text-align: center;
     }
     &__bio-releases,
