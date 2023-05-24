@@ -11,7 +11,7 @@ function EpkFH() {
     <>
       <HeaderSmall />
       <main className="main">
-        <h1>Forever High - New Album from Crimson Devils</h1>
+        <h1>Forever High - Second Album from Crimson Devils</h1>
         <section className="main__album-audio">
           <section className="album">
             <img src={FH} alt="Forever High Album Art" />
@@ -23,7 +23,7 @@ function EpkFH() {
         </section>
         <section className="main__description-tracklist">
           <section className="description">
-            <h2>Forever High is the upcoming release from Crimson Devils</h2>
+            <h2>Description</h2>
             <p>Hailing from Austin, Texas, <strong>Crimson Devils</strong> is a power trio that holds its roots in the more excitable, heavier side of rock and roll. By blazing a trail with their own high-powered attitude and vision, they have separated themselves from the masses and made room to create something truly worth hearing.</p>
             <p>As the second release from Crimson Devils, <strong>Forever High</strong> is a progression and elevation of all the things that the band does best. Driving energy, tight grooves and all the amplitude pushed to the limit. <strong>Forever High</strong> hands out eleven tight, focused cuts that showcase the band's power, technical abilities and the capability to write a song with a hook. No filler here, just all the band's best work in one tasty place.</p>
             <p>Recorded and mixed by Jason Morales at the BBQ Shack.</p>
